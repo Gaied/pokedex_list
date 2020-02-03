@@ -3,12 +3,6 @@
         <h1 class="display-4">POKEDEX</h1>
         <p class="lead">Vous trouverez ici la liste des pokémons que vous possédez.</p>
         <!-- Au survol de la souris sur un pokémon, la classe "alert-danger" doit être remplacée par "alert-success" -->
-        <div class="alert alert-danger mt-3" role="alert">
-            <h4 class="alert-heading">Pokémon survolé</h4>
-            <hr>
-            <!-- Au survol de la souris sur un pokémon, le nom de ce dernier doit remplacer le texte "Aucun" -->
-            <p>Aucun</p>
-        </div>
     </div>
 </div>
 
@@ -19,6 +13,6 @@
             S'il est demandé dans ce TP de communiquer des informations depuis le pokedex, vers les pokemons...
             ... il y a de grandes chances que cela se passe ici ! =)
         -->
-        <pkd-pokemon class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-1"></pkd-pokemon>
+        <pkd-pokemon *ngFor='let pokemon of pokedex.pokemons' [pokemon]='pokemon' (pokemonHovered)='pokemonHovered($event)' (pokemonOnHovered)='pokemonOnHovered()' class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-1"></pkd-pokemon>
     </div>
 </div>

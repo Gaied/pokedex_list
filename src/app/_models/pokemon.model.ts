@@ -1,15 +1,17 @@
 export enum Type {
     Feu,
     Eau,
-    Elec
+    Electrique,
+    Poisson,
+    Plante
 
 }
 export class PokemonModel {
     specie: String;
     description: String;
-    types: Type
+    types: Array<Type>
 
-    constructor(specie: String, description: String, types: Type){
+    constructor({specie, description, types}){
         this.specie= specie;
         this.description= description;
         this.types= types;
